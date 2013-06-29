@@ -3,5 +3,5 @@ sqlalchemy==0.8.1
 flask-sqlalchemy==0.16
 #flask-lazyviews
 git+git://github.com/jonafato/Flask-LazyViews.git
-psycopg2
+#psycopg2
 requests==1.2.3

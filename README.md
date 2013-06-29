@@ -23,6 +23,11 @@ You won't need to manually install any of these, beyond python3 and virtualenv. 
 
 See requirements.txt for a more detailed listing of requirements.
 
+Installation
+============
+
+Instructions can be found here: (https://github.com/NYCPython/nycpython.com/wiki/Installation)
+
 Virtual Machine
 ===============
 
@@ -30,29 +35,50 @@ We have a custom-built Lubuntu (http://lubuntu.net/) VM which you should be able
 
 This VM can be run from VirtualBox (https://www.virtualbox.org/) on Linux/OS X/Windows.
 
-Lubuntu is a lightweight, fully-featured varient of Ubuntu; your laptop should need only 512< MiB of RAM. Since the disk image is fairly large (4 GiB,) we'll probably let you copy it from a USB thumbdrive.
+Lubuntu is a lightweight, fully-featured varient of Ubuntu; the virtual machine should need only 512< MiB of RAM to run it. 
+Since the disk image is fairly large (4 GiB,) have a member help you install it from a USB thumbdrive.
 
 Once you've booted into the VM, you can use the default account: nycpython/password
 
-We've set up the virtual machine as follows:
+We've set up the virtual machine similarly to the instructions in the following section:
 
-    # install Sublime http://www.sublimetext.com/2
+Setup on Your Own Machine
+=========================
+
+Note that these steps are not required if you installed the virtual machine image mentioned in the previous section.
+
+You can use these steps to set up your own machine.
+
+    # install Sublime http://www.sublimetext.com/2 (not required)
     $ wget 'http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1.tar.bz2'
     $ tar xjvf Sublime\ Text\ 2.0.1\ x64.tar.bz2 
 
-    # install some useful editing & tool-chain software: git, vim, tmux
+    # install some useful editing & tool-chain software: 
+    # git is the version control tool; vim is a text editor; tmux is a terminal multiplexer
     $ sudo apt-get install git vim tmux
+    # This is not done on the virtual machine, but this is the time to clone the repository.
+    # if you already have git set up, first two aren't required.
+    $ git config --global user.name "Your Name Comes Here"
+    $ git config --global user.email you@yourdomain.example.com
+    $ git clone https://github.com/NYCPython/nycpython.com.git
+
 
     # install all the system software & Python packages
     $ sudo apt-get install sqlite3 postgresql
     $ sudo apt-get install python3.3{,-dbg,-dev-,-doc} cython3{,-dbg} python3-pip python-virtualenv
 
-    # create your virtualenv (here, I assume virtualenvwrapper is being used, but it's not much different without it. TODO: add explicit instructions for lacking virtualenvwrapper)
-    $ mkvirtualenv -p /usr/local/bin/python3 nycpython
+    # create your virtualenv 
+    # insert the following three lines (minus the #'s) into the top of your .bashrc file
+    # export WORKON_HOME=$HOME/.virtualenvs
+    # export MSYS_HOME=/c/msys/1.0
+    # source /usr/local/bin/virtualenvwrapper.sh
+    # And execute the following commands.
+    $ source .bashrc
+    $ mkvirtualenv -p `which python3` nycpython
 
     # install packages
     $ cd nycpython.com/
-    $ pip install -r requirements.txt
+    $ pip install -r requirements.txt # comment out psycopg2
 
     # enter a virtualenv (already set up on the VM)
     $ workon nycpython
