@@ -44,7 +44,8 @@ We've set up the virtual machine as follows:
     $ sudo apt-get install git vim tmux
 
     # install all the system software & Python packages
-    $ sudo apt-get install python3.3 python3.3-dbg python-pip python-virtualenv
+    $ sudo apt-get install sqlite3 postgresql
+    $ sudo apt-get install python3.3{,-dbg,-dev-,-doc} cython3{,-dbg} python3-pip python-virtualenv
 
     # install packages
     $ pip install ??
