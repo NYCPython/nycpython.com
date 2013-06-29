@@ -1,9 +1,54 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Hello, World!</h1>
+<h1>NYC Python Meetup Group</h1>
+
+<div id="headline-events">
+  <h2>Headling Events</h2>
+  <h3>A series of 15 to 30 minute talks @ Knewton</h3>
+</div>
+
+<div id="recurring-events">
+  <h2>Recurring Events</h2>
+  <h3>Tuesday Office Hours</h3>
+  <h3>Saturday Study Group</h3>
+  <h3>Sunday Study Group @ AlleyNYC</h3>
+</div>
+
+<div id="organizers">
+  <h2>Organizers</h2>
+  <ul>
+    <li>
+      <h3>James P: chair</h3>
+      <h3>james@nycpython.com // @dontusethiscode</h3>
+    </li> 
+    <li><h3>Jon B</h3></li>
+    <li><h3>Celia L</h3></li>
+    <li><h3>Emily C</h3></li>
+    <li><h3>Andy D</h3></li>
+    <li><h3>Gloria W</h3></li>
+  </ul>
+</div>
+
+<div id="purpose">
+  NYC Python is dedicated to promoting Python in the NYC community.
+  We hold a number of events each month, including tutorial events, nights-of-talk, lightning-talks, micro-hackathons, study groups, API
+nights, hack-and-tells, weekly office hours, and project nights.
+</div>
+
+<div id="sponsors"></div>
+<div id="recruiting"></div>
+
+<div id="code-of-conduct"></div>
+
+<div id="resources"></div>
+
+<div id="jobs-board"></div>
+
+<div id="members"></div>
 
 <div id="twitter">
 {% include "twitter.html" %}
 </div>
+
 {% endblock %}
