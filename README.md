@@ -54,6 +54,9 @@ We've set up the virtual machine as follows:
     $ cd nycpython.com/
     $ pip install -r requirements.txt
 
+    # enter a virtualenv (already set up on the VM)
+    $ workon nycpython
+    
     # run the server
     $ cd src/
     $ python3 server.py
