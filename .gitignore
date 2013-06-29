@@ -1,3 +1,10 @@
+# For those of us using OS X
+.DS_Store
+
+# The test db
+dev.db
+
+# Github's default python gitignore
 *.py[cod]
 
 # C extensions

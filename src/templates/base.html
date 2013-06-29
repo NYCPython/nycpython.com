@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}Home{% endblock %} | NYC Python</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/foundation.min.css">
+        {% block extra_css %}{% endblock %}
+        {% block extra_head_js %}{% endblock %}{# This should be very rarely used. If at all possible, javascript should go at the end of the page #}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <script src="/static/foundation.min.js"></script>
+        {% block extra_js %}{% endblock %}
+    </body>
+</html>
