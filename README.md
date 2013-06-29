@@ -1,5 +1,5 @@
-nycpython.com
-=============
+nycpython.com Hackathon
+=======================
 
 The official website for the NYC Python meetup group.
 
@@ -8,17 +8,20 @@ This website will help us announce events and reach out to the community.
 Technologies
 ============
 
-We will be using the following technologies:
-- python3 http://docs.python.org/3/
-- flask http://flask.pocoo.org/docs/
-- jinja2 http://jinja.pocoo.org/docs/
-- sqlalchemy http://www.sqlalchemy.org/
-- postgres 9.0< http://www.postgresql.org/docs/
-- python psycopg (for postgres) http://initd.org/psycopg/docs/
-- sqlite (for testing) http://www.sqlite.org/docs.html 
-- python sqlite3 http://docs.python.org/2/library/sqlite3.html
+We will be using the following technologies.
 
-see requirements.txt for a more detailed listing of requirements.
+- python3 (http://docs.python.org/3/)  
+- flask (http://flask.pocoo.org/docs/) as a micro web application framework
+- jinja2 (http://jinja.pocoo.org/docs/) as a templating tool
+- postgres 9.0< (http://www.postgresql.org/docs/) for data storage
+- sqlite (http://www.sqlite.org/docs.html) for testing
+- sqlalchemy (http://www.sqlalchemy.org/) (see: http://www.meetup.com/nycpython/events/120485002/)
+- python psycopg (http://initd.org/psycopg/docs/) & sqlite3 (http://docs.python.org/2/library/sqlite3.html)
+- python virtualenv (http://pypi.python.org/pypi/virtualenv) python pip (http://pypi.python.org/pypi/pip)
+
+You won't need to manually install any of these, beyond python3 and virtualenv. You should be able to pull in all these requirements using `pip`
+
+See requirements.txt for a more detailed listing of requirements.
 
 Virtual Machine
 ===============
@@ -67,5 +70,5 @@ Just enter the nycpython.com directory and make sure everything is up-to-date:
 
 Alternatively, you can set up a GitHub account and fork this repository https://github.com/NYCPython/nycpython.com/fork
 
-Regardless of how you set things up, *we will accept contributions only as pull requests on GitHub.*
+Regardless of how you set things up, ***we will accept contributions only as pull requests on GitHub.***
 
