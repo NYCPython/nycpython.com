@@ -23,6 +23,11 @@ You won't need to manually install any of these, beyond python3 and virtualenv. 
 
 See requirements.txt for a more detailed listing of requirements.
 
+Installation
+============
+
+Instructions can be found here: (https://github.com/NYCPython/nycpython.com/wiki/Installation)
+
 Virtual Machine
 ===============
 
