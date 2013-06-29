@@ -16,15 +16,14 @@ from src import GROUP_ID, GROUP_URL
 from src.services.meetup import MeetupAPIRequest
 
 
-EVENT_FIELDS = ('name', 'event_url', 'time')
 RECURRING_TAG = '#recurring'
 
 
 def get_group_events():
     """Gets the events from the Meetup API for the NYCPython group and returns
-    a dictionary of events that contains name, event_url, datetime object and
-    a boolean recurring depending on whether or not the name of the event
-    contains ``RECURRING_TAG``
+    a list of dictionaries of events that contains name, event_url, a datetime
+    object with the event's date and time and a boolean recurring depending on
+    whether or not the name of the event contains ``RECURRING_TAG``
 
     """
 
