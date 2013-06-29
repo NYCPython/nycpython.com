@@ -47,8 +47,16 @@ We've set up the virtual machine as follows:
     $ sudo apt-get install sqlite3 postgresql
     $ sudo apt-get install python3.3{,-dbg,-dev-,-doc} cython3{,-dbg} python3-pip python-virtualenv
 
+    # create your virtualenv (here, I assume virtualenvwrapper is being used, but it's not much different without it. TODO: add explicit instructions for lacking virtualenvwrapper)
+    $ mkvirtualenv -p /usr/local/bin/python3 nycpython
+
     # install packages
-    $ pip install ??
+    $ cd nycpython.com/
+    $ pip install -r requirements.txt
+
+    # run the server
+    $ cd src/
+    $ python3 server.py
 
 GitHub & Git
 ============

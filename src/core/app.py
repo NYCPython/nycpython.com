@@ -16,3 +16,6 @@ app.config.from_object(settings)
 # Register new blueprints here
 from core.urls import blueprint as core_blueprint
 app.register_blueprint(core_blueprint, url_prefix='')
+
+from about.urls import blueprint as about_blueprint
+app.register_blueprint(about_blueprint, url_prefix='/about')
