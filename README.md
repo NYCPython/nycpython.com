@@ -72,3 +72,15 @@ Alternatively, you can set up a GitHub account and fork this repository https://
 
 Regardless of how you set things up, ***we will accept contributions only as pull requests on GitHub.***
 
+Getting Started
+===============
+
+Go to https://github.com/NYCPython/nycpython.com/issues pick an issue, and start hacking away!
+
+Issues are broadly categorised as graphics work (logos, banners, visual elements,) front-end work (HTML/CSS/JS,) and back-end work (python/flask/API integration.) 
+
+Issues relating to the Meetup API (http://www.meetup.com/meetup_api/) will require setting up a Meetup API key (http://www.meetup.com/meetup_api/key/)
+
+A quick tutorial: http://www.meetup.com/meetup_api/
+
+Issues relating to the Twitter API (https://dev.twitter.com/docs/api/1.1) will require setting up a Twitter API key.
