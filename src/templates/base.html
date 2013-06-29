@@ -2,12 +2,19 @@
 <html>
     <head>
         <title>{% block title %}Home{% endblock %} | NYC Python</title>
-        <link rel="stylesheet" type="text/css" href="/static/css/foundation.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-reponsive.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
         {% block extra_css %}{% endblock %}
-        {% block extra_head_js %}{% endblock %}{# This should be very rarely used. If at all possible, javascript should go at the end of the page #}
+        {% block extra_head_js %}{% endblock %}{# This should be very rarely used. If at all possible, javascript should go at the end of the page  #}
     </head>
     <body>
-        {% block content %}{% endblock %}
+        <section class="sidebar">
+        </section>
+        <div class="container-fluid main-content-area">
+         {% block content %}{% endblock %}
+        </div>
         <script src="/static/foundation.min.js"></script>
         {% block extra_js %}{% endblock %}
     </body>
