@@ -1,45 +1,12 @@
-{# <!doctype html>
-<html>
-    <head>
-        <title>{% block title %}home{% endblock %} | nyc python</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-reponsive.min.css">
-        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
-        <link href="/static/css/style.css" rel="stylesheet">
-        <link href="/static/css/font-awesome.min.css" rel="stylesheet">
-<link href="/static/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
-<link href="/static/css/prettify.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        {% block extra_css %}{% endblock %}
-        {% block extra_head_js %}{% endblock %}{# this should be very rarely used. if at all possible, javascript should go at the end of the page
-    </head>
-    <body data-spy="scroll" data-target=".scroller-spy" data-twttr-rendered="true">
-
-        <header id="sidebar">
-          <h2>NYC Python</h2>
-          <p>The New York Python Meetup Group</p>
-          <nav>
-            <ul>
-              <li>about</li>
-            </ul>
-          </nav>
-        </header>
-        <div class="container-fluid main-content-area">
-         {% block content %}{% endblock %}
-        </div>
-        <script src="/static/foundation.min.js"></script>
-        {% block extra_js %}{% endblock %}
-    </body>
-</html> #}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>{% block title %}home{% endblock %} | nyc python</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-reponsive.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
     {% block extra_css %}{% endblock %}
     {% block extra_head_js %}{% endblock %}{# this should be very rarely used. if at all possible, javascript should go at the end of the page #}
     <meta charset="utf-8">
@@ -85,8 +52,8 @@
             </p>
             <ul class="nav">
               <li class="active"><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+              <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
