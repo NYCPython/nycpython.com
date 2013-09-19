@@ -1,3 +1,8 @@
+# Editor files
+*~
+*.sw?
+*#*
+
 # For those of us using OS X
 .DS_Store
 

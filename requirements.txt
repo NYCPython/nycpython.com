@@ -1,7 +1,10 @@
-flask==0.10.1
-sqlalchemy==0.8.1
-flask-sqlalchemy==0.16
-#flask-lazyviews
+Flask==0.10.1
 git+git://github.com/jonafato/Flask-LazyViews.git
-#psycopg2
+Flask-SQLAlchemy==0.16
+Jinja2==2.7
+MarkupSafe==0.18
+Pygments==1.6
+SQLAlchemy==0.8.1
+Werkzeug==0.9.1
+itsdangerous==0.21
 requests==1.2.3
