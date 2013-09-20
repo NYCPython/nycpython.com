@@ -9,6 +9,9 @@
 # The test db
 dev.db
 
+# Vagrant
+.vagrant
+
 # Github's default python gitignore
 *.py[cod]
 
