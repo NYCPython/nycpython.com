@@ -12,8 +12,10 @@
 
 from datetime import datetime
 
-from src import GROUP_ID, GROUP_URL
-from src.services.meetup import MeetupAPIRequest
+from core.app import app
+GROUP_ID = app.config['GROUP_ID']
+GROUP_URL = app.config['GROUP_URL']
+from services.meetup import MeetupAPIRequest
 
 
 RECURRING_TAG = '#recurring'
