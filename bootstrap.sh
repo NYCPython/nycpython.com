@@ -19,8 +19,8 @@ export WORKON_HOME=/home/vagrant/.virtualenvs
 mkdir $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv -p /usr/bin/python3.3 -a /vagrant nycpythoncom
-workon nycpythoncom
+sudo chown -R vagrant:vagrant $WORKON_HOME
 
 # Install the requirements. Without the `--pre` flag Pip would see pytz's
 # releases as pre-release versions and fail.
-pip install --upgrade --pre --requirement /vagrant/requirements.txt
+sudo -u vagrant /home/vagrant/.virtualenvs/nycpythoncom/bin/pip install --upgrade --pre --requirement /vagrant/requirements.txt
