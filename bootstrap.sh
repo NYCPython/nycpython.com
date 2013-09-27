@@ -8,7 +8,7 @@ apt-get install -y emacs git-core nano python3.3-dev python-pip vim
 
 # Upgrade Pip before installing anything with it.
 sudo pip install -U pip
-sudo pip install -U virtualenvwrapper
+sudo pip install -U setuptools virtualenvwrapper
 
 # Make virtualenvwrapper available to vagrant
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> /home/vagrant/.bashrc
