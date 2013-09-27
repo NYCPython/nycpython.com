@@ -8,7 +8,7 @@ apt-get install -y emacs git-core nano python3.3-dev python-pip vim
 
 # Upgrade Pip before installing anything with it.
 sudo pip install -U pip
-sudo pip install -U virtualenvwrapper
+sudo pip install -U setuptools virtualenvwrapper
 
 # Make virtualenvwrapper available to vagrant
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> /home/vagrant/.bashrc
@@ -19,8 +19,8 @@ export WORKON_HOME=/home/vagrant/.virtualenvs
 mkdir $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv -p /usr/bin/python3.3 -a /vagrant nycpythoncom
-workon nycpythoncom
+sudo chown -R vagrant:vagrant $WORKON_HOME
 
 # Install the requirements. Without the `--pre` flag Pip would see pytz's
 # releases as pre-release versions and fail.
-pip install --upgrade --pre --requirement /vagrant/requirements.txt
+sudo -u vagrant /home/vagrant/.virtualenvs/nycpythoncom/bin/pip install --upgrade --pre --requirement /vagrant/requirements.txt
