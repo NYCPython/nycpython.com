@@ -14,7 +14,8 @@ from urllib.parse import urlencode
 
 import requests
 
-from src import MEETUP_API_KEY
+from core.app import app
+MEETUP_API_KEY = app.config['MEETUP_API_KEY']
 
 
 class MeetupAPIError(Exception):

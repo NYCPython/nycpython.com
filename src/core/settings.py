@@ -6,6 +6,10 @@ DEBUG = False
 
 SECRET_KEY = b'\x7f\xebt.Y\xea\xd5\x19"\x1ftu5\x9d\xaa.FD\xac5\xbc\x86\xe7c=\xc5_\xfe\xf5\x96\x1eH'  # NOQA
 
+MEETUP_API_KEY = os.environ.get('MEETUP_API_KEY')
+GROUP_ID = 263790  # The NYCPython Meetup Group ID
+GROUP_URL = 'http://www.meetup.com/nycpython/'
+
 SQLALCHEMY_DATABASE_URI = \
     'postgresql://nycpython:nycpython@localhost:5432/nycpython'
 TEMPLATE_FOLDER = os.path.join(PROJECT_ROOT, 'templates')
