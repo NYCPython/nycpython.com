@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 """
     nycpython.services.meetup.events
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
