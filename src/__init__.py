@@ -1,7 +1,0 @@
-"""
-    nycpython.src
-    ~~~~~~~~~~~~~
-
-    Main project
-
-"""

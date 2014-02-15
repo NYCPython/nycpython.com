@@ -1,8 +1,9 @@
 Flask==0.10.1
-git+git://github.com/jonafato/Flask-LazyViews.git
-Jinja2==2.7
+Flask-Script==0.6.6
+Jinja2==2.7.2
 MarkupSafe==0.18
 Pygments==1.6
-Werkzeug==0.9.1
-itsdangerous==0.21
-requests==1.2.3
+Werkzeug==0.9.4
+itsdangerous==0.23
+redis==2.9.1
+requests==2.2.1

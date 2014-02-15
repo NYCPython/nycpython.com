@@ -61,7 +61,7 @@ To run the nycpython.com server, execute the following commands on the virtual
 machine::
 
     $ workon nycpythoncom
-    $ python src/server.py
+    $ python wsgi.py
 
 The site can be accessed in your browser by visiting `localhost:5050`_.
 
@@ -96,5 +96,6 @@ A list of issues can be found on GitHub_. Issues are categorized as graphics
 
 Pick one and start hacking away!
 
-.. _GitHub: https://github.com/NYCPython/nycpython.com/issues
+After you're done, be sure to add your name and GitHub profile to AUTHORS.rst.
 
+.. _GitHub: https://github.com/NYCPython/nycpython.com/issues

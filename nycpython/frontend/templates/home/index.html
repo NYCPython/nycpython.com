@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NYC Python</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <nav>
+    <a href="#">Events</a>
+    <a href="#">About Us</a>
+    <a href="#">Members</a>
+    <a href="#">Sponsoring</a>
+    <a href="#">Contact Us</a>
+  </nav>
+
+  <h1>NYC Python</h1>
+  <small>Meet other local Python programming enthusiasts!</small>
+
+  <h2>Our Events</h2>
+  <ol>
+    {% for event in events %}
+      <li>
+        <a href="{{ event['url'] }}">{{ event['name'] }}</a>
+        {{ event['time'].strftime('%a, %b %d, %Y') }}
+      </li>
+    {% endfor %}
+  </ol>
+
+  <h2>About Us</h2>
+
+  <h2>Members</h2>
+  <ul>
+    {% for photo in photos %}
+      <li><img src="{{ photo['url'] }}"></li>
+    {% endfor %}
+  </ul>
+
+  <h2>Sponsoring</h2>
+
+  <h2>Contact Us</h2>
+</body>
+</html>

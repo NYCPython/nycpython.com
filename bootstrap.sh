@@ -23,4 +23,4 @@ sudo chown -R vagrant:vagrant $WORKON_HOME
 
 # Install the requirements. Without the `--pre` flag Pip would see pytz's
 # releases as pre-release versions and fail.
-sudo -u vagrant /home/vagrant/.virtualenvs/nycpythoncom/bin/pip install --upgrade --pre --requirement /vagrant/requirements.txt
+sudo -u vagrant /home/vagrant/.virtualenvs/nycpythoncom/bin/pip install --upgrade --requirement /vagrant/requirements.txt

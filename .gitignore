@@ -1,45 +1,53 @@
-# Editor files
+settings.cfg
+
+# Frontend preprocessors
+.sass-cache
+.webassets-cache
+
+.vagrant
+
+# These should go in a global .gitignore, but not everyone uses one.
 *~
 *.sw?
 *#*
+.DS*
 
-# For those of us using OS X
-.DS_Store
+# Python .gitignore from https://github.com/github/gitignore
 
-# The test db
-dev.db
-
-# Vagrant
-.vagrant
-
-# Github's default python gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
 *.py[cod]
 
 # C extensions
 *.so
 
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
+# Distribution / packaging
+.Python
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
 .installed.cfg
-lib
-lib64
+*.egg
 
 # Installer logs
 pip-log.txt
+pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+.tox/
 .coverage
-.tox
+.cache
 nosetests.xml
+coverage.xml
 
 # Translations
 *.mo
@@ -48,3 +56,13 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
+*.log
+*.pot
+
+# Sphinx documentation
+docs/_build/
