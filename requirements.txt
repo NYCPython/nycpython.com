@@ -1,5 +1,5 @@
 Flask==0.10.1
-Flask-Script==0.6.6
+Flask-Script==0.6.7
 Jinja2==2.7.2
 MarkupSafe==0.18
 Pygments==1.6
