@@ -28,6 +28,9 @@ What You Need
 - Git_
 - `A GitHub account`_
 - `The code`_
+
+If you do not have Python 3 installed, you will also need:
+
 - VirtualBox_
 - Vagrant_ (`docs <http://docs.vagrantup.com/v2/>`_)
 
@@ -37,12 +40,24 @@ What You Need
 .. _Vagrant: http://downloads.vagrantup.com/
 .. _VirtualBox: https://www.virtualbox.org/wiki/Downloads
 
+What You Need to Know
+---------------------
+
+Once you are familiar with Flask, it is recommended that you also become
+familiar with blueprints_ and `application factories`_. For more information
+about application factories, please check out `this post`_ by `Matt Wright`_.
+
+.. _application factories: http://flask.pocoo.org/docs/patterns/appfactories/
+.. _blueprints: http://flask.pocoo.org/docs/blueprints/
+.. _Matt Wright: https://github.com/mattupstate
+.. _this post: http://mattupstate.com/python/2013/06/26/how-i-structure-my-flask-applications.html
+
 Setup
 -----
 
-After installing VirtualBox and Vagrant, `fork the code on GitHub`_ and clone it
-locally by executing the following command, replacing ``USERNAME`` with your
-GitHub username::
+After installing VirtualBox and Vagrant (see above), `fork the code on GitHub`_
+and clone it locally by executing the following command, replacing ``USERNAME``
+with your GitHub username::
 
     $ git clone git@github.com:USERNAME/nycpython.com.git
 
@@ -68,11 +83,23 @@ The site can be accessed in your browser by visiting `localhost:5050`_.
 .. _fork the code on GitHub: https://github.com/NYCPython/nycpython.com/fork
 .. _localhost:5050: http://localhost:5050
 
+Settings
+--------
+
+Most settings are read from environment variables. For a full list, please check
+``nycpython/settings.py``. It can become difficult to maintain these variables,
+especially when working with Vagrant. To make it easier, a file called
+``settings.cfg`` can be placed inside the ``nycpython/instance`` folder. Any
+settings defined here will override the defaults.
+``nycpython/instance/example_settings.cfg`` can be used as an example for how to
+set up such a file.
+
 Meetup API
 ----------
 
-In order to work with the `Meetup API`_, you will first need to create a `Meetup
-API Key`_.
+In order to work with the `Meetup API`_, you will need a `Meetup API Key`_. You
+will also need to know the ID of the group for which you want to get data. In
+the case of NYC Python, the group ID is ``263790``.
 
 .. _Meetup API: http://www.meetup.com/meetup_api/
 .. _Meetup API Key: http://www.meetup.com/meetup_api/key/
@@ -80,7 +107,7 @@ API Key`_.
 Twitter API
 -----------
 
-In order to work with the `Twitter API`_, you will first need to create a
+In order to work with the `Twitter API`_, you will need to create a
 `Twitter Application`_. Once you have created the application, you will be able
 to retrieve its OAuth settings.
 
@@ -90,11 +117,15 @@ to retrieve its OAuth settings.
 Contributing
 ++++++++++++
 
-A list of issues can be found on GitHub_. Issues are categorized as graphics
-(e.g., logos, banners), front-end (e.g., HTML, CSS, JavaScript), and back-end
-(e.g., Python, API Integration).
+A list of issues can be found on GitHub_. Issues are categorized according to
+specific areas of focus. The can be used to help find issues in which you are
+particularly interested.
 
 Pick one and start hacking away!
+
+After you're done, be sure to add your name and GitHub profile to AUTHORS.rst.
+
+.. _GitHub: https://github.com/NYCPython/nycpython.com/issues
 
 Testing
 -------
@@ -105,11 +136,18 @@ the testing requirements::
 
     $ pip install -r tests/requirements.txt
 
-The test suite can be run with tox_::
+The tests should be run using tox_::
 
     $ tox
 
-After you're done, be sure to add your name and GitHub profile to AUTHORS.rst.
+If you are using Vagrant, make sure you connect to your virtual machine first::
 
-.. _GitHub: https://github.com/NYCPython/nycpython.com/issues
+    $ vagrant ssh
+
+Once connected::
+
+    $ workon nycpythoncom
+    $ pip install -r tests/requirements.txt
+    $ tox
+
 .. _tox: http://tox.rtfd.org
