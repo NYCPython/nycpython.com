@@ -5,7 +5,17 @@ import pkgutil
 
 from flask import Blueprint
 
-__all__ = 'register_blueprints',
+__all__ = 'check_required_settings', 'register_blueprints',
+
+DOES_NOT_EXIST = '!@DNE@!'  # Placeholder value to use for missing settings.
+
+
+def check_required_settings(config, keys=('SECRET_KEY',)):
+    """Validate the presence of required settings."""
+    for key in keys:
+        if config.get(key, DOES_NOT_EXIST) == DOES_NOT_EXIST:
+            message = 'The {} configuration settings is required.'.format(key)
+            raise RuntimeError(message)
 
 
 def register_blueprints(app, package_name, package_path):

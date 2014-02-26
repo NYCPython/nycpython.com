@@ -96,6 +96,20 @@ A list of issues can be found on GitHub_. Issues are categorized as graphics
 
 Pick one and start hacking away!
 
+Testing
+-------
+
+Before you push your changes back to GitHub and submit a pull request, you
+probably want to run the test suite. To prepare for running the tests, install
+the testing requirements::
+
+    $ pip install -r tests/requirements.txt
+
+The test suite can be run with tox_::
+
+    $ tox
+
 After you're done, be sure to add your name and GitHub profile to AUTHORS.rst.
 
 .. _GitHub: https://github.com/NYCPython/nycpython.com/issues
+.. _tox: http://tox.rtfd.org
