@@ -2,7 +2,7 @@
 
 from flask import Flask
 
-from nycpython.utils import register_blueprints
+from nycpython.utils import check_required_settings, register_blueprints
 
 __all__ = 'create_app',
 
@@ -24,6 +24,8 @@ def create_app(package_name, package_path, settings_override=None,
     app.config.from_object('nycpython.settings')
     app.config.from_pyfile('settings.cfg', silent=True)
     app.config.from_object(settings_override)
+
+    check_required_settings(app.config)
 
     register_blueprints(app, package_name, package_path)
 

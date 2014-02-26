@@ -2,26 +2,19 @@
 
 from os import environ as env
 
+from nycpython.utils import DOES_NOT_EXIST
+
 
 def bool_(key, default):
     """Return an environment setting represented as a boolean."""
     return env.get(key, str(default)).lower() == 'true'
 
 
-def required(key):
-    """Return the value for a required environment setting."""
-    try:
-        return env[key]
-    except KeyError:
-        message = 'The {} environment setting is required.'.format(key)
-        raise RuntimeError(message)
-
-
 DEBUG = bool_('DEBUG', False)
-SECRET_KEY = required('SECRET_KEY')
+SECRET_KEY = env.get('SECRET_KEY', DOES_NOT_EXIST)
 
 # Flask-Assets
-ASSESTS_BUDEG = bool_('ASSETS_DEBUG', False)
+ASSESTS_DEBUG = bool_('ASSETS_DEBUG', False)
 
 # Flask-Cache
 CACHE_REDIS_URL = env.get('CACHE_REDIS_URL')
@@ -33,4 +26,4 @@ MEETUP_GROUP_ID = env.get('MEETUP_GROUP_ID')
 
 del bool_
 del env
-del required
+del DOES_NOT_EXIST
