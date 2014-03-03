@@ -89,10 +89,9 @@ Settings
 Most settings are read from environment variables. For a full list, please check
 ``nycpython/settings.py``. It can become difficult to maintain these variables,
 especially when working with Vagrant. To make it easier, a file called
-``settings.cfg`` can be placed inside the ``nycpython/instance`` folder. Any
-settings defined here will override the defaults.
-``nycpython/instance/example_settings.cfg`` can be used as an example for how to
-set up such a file.
+``settings.cfg`` can be placed inside the ``instance`` folder. Any settings
+defined here will override the defaults.  ``instance/example_settings.cfg`` can
+be used as an example for how to set up such a file.
 
 Meetup API
 ----------
