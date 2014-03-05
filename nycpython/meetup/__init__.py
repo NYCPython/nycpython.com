@@ -2,30 +2,14 @@
 
 from datetime import datetime
 import json
+import logging
 
 import redis
 import requests
 
-from nycpython.utils import create_logger
-
 __all__ = 'events', 'photos'
 
-meetup_api_logger = create_logger(__name__)
-
-
-# def api_error_logger(api, method, response):
-#     _logger.error('{}'.format(api, method, response))
-#
-
-class APIException(Exception):
-
-    """Base Error logging class for the Meetup's API error messages exceptions."""
-
-    def __init__(self, method, error_type, response):
-        pass
-
-    def __str__(self):
-        pass
+_logger = logging.getLogger(__name__)
 
 
 class APIWrapper:
@@ -36,7 +20,7 @@ class APIWrapper:
         self.api_key = api_key
 
     def _get(self, method, limit, **params):
-        #r = redis.StrictRedis()
+        r = redis.StrictRedis()
         key = 'meetup_{}_{}'.format(method, limit)
         result = None and r.get(key)
         if not result:
@@ -49,11 +33,13 @@ class APIWrapper:
                 meetup_api_logger.error('Meetup API <{}>: {}'.format(
                     resp.status_code, resp.json().get('details')))
                 meetup_api_logger.error('Meetup returned no results for {}'.format(method))
+                result = []
+                return result
 
             result = resp.json().get('results', [])
 
-            #r.set(key, json.dumps(result))
-            #r.expire(key, 300)
+            r.set(key, json.dumps(result))
+            r.expire(key, 300)
         else:
             result = json.loads(result)
 

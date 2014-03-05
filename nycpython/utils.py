@@ -2,7 +2,6 @@
 
 import importlib
 import pkgutil
-import logging
 
 from flask import Blueprint
 
@@ -27,8 +26,3 @@ def register_blueprints(app, package_name, package_path):
             item = getattr(m, x)
             if isinstance(item, Blueprint):
                 app.register_blueprint(item)
-
-
-def create_logger(name):
-    _logger = logging.getLogger(name)
-    return _logger

@@ -14,3 +14,4 @@ The following folks have helped contribute to making this website possible.
 * Andy Dirnberger (`@dirn <https://github.com/dirn>`_)
 * Kat Chuang (`@katychuang <https://github.com/katychuang>`_)
 * Jonathan Beller (`@48lizards <https://github.com/48lizards>`_)
+* Tanvir Alam (`@talam <https://github.com/talam>`_)
