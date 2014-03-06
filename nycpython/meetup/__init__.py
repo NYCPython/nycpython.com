@@ -30,9 +30,9 @@ class APIWrapper:
 
             resp = requests.get(url, params=params)
             if resp.status_code != 200:
-                meetup_api_logger.error('Meetup API <{}>: {}'.format(
+                _logger.error('Meetup API <{}>: {}'.format(
                     resp.status_code, resp.json().get('details')))
-                meetup_api_logger.error('Meetup returned no results for {}'.format(method))
+                _logger.error('Meetup returned no results for {}'.format(method))
                 result = []
                 return result
 
