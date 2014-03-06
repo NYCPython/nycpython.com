@@ -11,10 +11,12 @@ We will be using the following technologies
 - `Python 3`_
 - Flask_, a microframework
 - Jinja2_, a template engine
+- Redis_, a key-value store
 
 .. _Flask: http://flask.pocoo.org/docs/
 .. _Jinja2: http://jinja.pocoo.org/docs/
 .. _Python 3: http://docs.python.org/3/
+.. _Redis: http://redis.io/ 
 
 Getting Started
 +++++++++++++++
@@ -52,8 +54,8 @@ about application factories, please check out `this post`_ by `Matt Wright`_.
 .. _Matt Wright: https://github.com/mattupstate
 .. _this post: http://mattupstate.com/python/2013/06/26/how-i-structure-my-flask-applications.html
 
-Setup
------
+Setup with VirtualBox and Vagrant 
+---------------------------------
 
 After installing VirtualBox and Vagrant (see above), `fork the code on GitHub`_
 and clone it locally by executing the following command, replacing ``USERNAME``
@@ -82,6 +84,36 @@ The site can be accessed in your browser by visiting `localhost:5050`_.
 
 .. _fork the code on GitHub: https://github.com/NYCPython/nycpython.com/fork
 .. _localhost:5050: http://localhost:5050
+
+
+Setup without VirtualBox or Vagrant 
+-----------------------------------
+
+For users unable to install VirtualBox or Vagrant you can still get a copy running
+locally. `Fork the code on GitHub`_ and clone it locally by executing the following command, 
+replacing ``USERNAME`` with your GitHub username::
+
+    $ git clone git@github.com:USERNAME/nycpython.com.git
+
+After doing that, create a virtual environment ``nycpythoncom`` with Python 3 as your default interpreter
+and execute the following command to install all the necessary dependencies for this project::
+
+    $ pip install -r requirements.txt 
+
+Next, we'll need to install Redis before we can run the server. Deactivate your virutal environment and see 
+the `Redis Quickstart`_ guide for installation instructions. 
+
+Once you have Redis installed, reactivate your virtual environment and execute the following commands
+to run the nycpython.com server::
+
+    $ redis-server &
+    $ python wsgi.py
+
+The site can be accessed in your browser by visiting `localhost:5050`_.
+
+.. _fork the code on GitHub: https://github.com/NYCPython/nycpython.com/fork
+.. _localhost:5050: http://localhost:5050
+.. _Redis Quickstart: http://redis.io/topics/quickstart 
 
 Settings
 --------
