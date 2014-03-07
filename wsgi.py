@@ -1,11 +1,12 @@
 """WSGI application."""
 
+from werkzeug._internal import _easteregg
 from werkzeug.serving import run_simple
 from werkzeug.wsgi import DispatcherMiddleware
 
 from nycpython import frontend
 
-application = DispatcherMiddleware(frontend.create_app())
+application = DispatcherMiddleware(_easteregg(frontend.create_app()))
 
 if __name__ == '__main__':
     run_simple(
