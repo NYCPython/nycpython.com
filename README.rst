@@ -100,7 +100,7 @@ and execute the following command to install all the necessary dependencies for 
 
     $ pip install -r requirements.txt 
 
-Next, we'll need to install Redis before we can run the server. Deactivate your virutal environment and see 
+Next, we'll need to install Redis before we can run the server. Deactivate your virtual environment and see 
 the `Redis Quickstart`_ guide for installation instructions. 
 
 Once you have Redis installed, reactivate your virtual environment and execute the following commands
@@ -109,10 +109,10 @@ to run the nycpython.com server::
     $ redis-server &
     $ python wsgi.py
 
-The site can be accessed in your browser by visiting `localhost:5050`_.
+The site can be accessed in your browser by visiting `localhost:5000`_.
 
 .. _fork the code on GitHub: https://github.com/NYCPython/nycpython.com/fork
-.. _localhost:5050: http://localhost:5050
+.. _localhost:5000: http://localhost:5000
 .. _Redis Quickstart: http://redis.io/topics/quickstart 
 
 Settings
