@@ -22,4 +22,5 @@ def index():
     api = APIWrapper(api_key)
     events = api.events(group_id)
     photos = api.photos(group_id, 5)
+
     return render_template('home/index.html', events=events, photos=photos)

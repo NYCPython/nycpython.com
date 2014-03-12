@@ -22,7 +22,6 @@ class APIWrapper:
     def _get(self, method, limit, **params):
         r = redis.StrictRedis()
         key = 'meetup_{}_{}'.format(method, limit)
-
         result = None and r.get(key)
         if not result:
             url = 'http://api.meetup.com/2/{}.json'.format(method)
@@ -33,7 +32,9 @@ class APIWrapper:
             if resp.status_code != 200:
                 _logger.error('Meetup API <{}>: {}'.format(
                     resp.status_code, resp.json().get('details')))
-                raise Exception('Meetup returned no results for {}'.format(method))
+                _logger.error('Meetup returned no results for {}'.format(method))
+                result = []
+                return result
 
             result = resp.json().get('results', [])
 
