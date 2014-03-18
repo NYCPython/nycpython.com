@@ -7,7 +7,7 @@ import logging
 import redis
 import requests
 
-__all__ = 'events', 'photos'
+__all__ = 'APIWrapper',
 
 _logger = logging.getLogger(__name__)
 
@@ -32,9 +32,9 @@ class APIWrapper:
             if resp.status_code != 200:
                 _logger.error('Meetup API <{}>: {}'.format(
                     resp.status_code, resp.json().get('details')))
-                _logger.error('Meetup returned no results for {}'.format(method))
-                result = []
-                return result
+                message = 'Meetup returned no results for {}'.format(method)
+                _logger.error(message)
+                return []
 
             result = resp.json().get('results', [])
 
