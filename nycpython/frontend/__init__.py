@@ -4,6 +4,7 @@ from functools import wraps
 import os
 
 from flask import render_template
+from werkzeug._internal import _easteregg
 
 from nycpython import factory
 
@@ -22,7 +23,7 @@ def create_app(settings_override=None):
         for e in (404, 500):
             app.errorhandler(e)(handle_error)
 
-    return app
+    return _easteregg(app)
 
 
 def handle_error(error):

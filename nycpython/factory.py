@@ -18,7 +18,6 @@ def create_app(package_name, package_path, settings_override=None,
                                          Flask-Security blueprints.
 
     """
-
     app = Flask(package_name, instance_relative_config=True)
 
     app.config.from_object('nycpython.settings')
